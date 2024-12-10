@@ -191,6 +191,10 @@ if [[ "${python_major_version}" == +(3.8|3.9|3.10|3.11|3.12) && "${package_manag
 	meta_time "sqlite_install_duration" "${install_sqlite_start_time}"
 fi
 
+# Force pip to version 24.0
+echo "Forcing pip to version 24.0"
+pip install --upgrade pip==24.0
+
 # Install app dependencies.
 dependencies_install_start_time=$(nowms)
 case "${package_manager}" in
